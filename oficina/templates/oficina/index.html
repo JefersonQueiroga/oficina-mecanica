@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard - Oficina{% endblock %}
+{% block nav_dashboard %}active{% endblock %}
+{% block content %}
+<h2 class="mb-4">Dashboard</h2>
+<div class="row g-3">
+  <div class="col-md-3">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="text-secondary small">Veículos</div>
+            <div class="display-6 fw-bold">{{ total_veiculos }}</div>
+          </div>
+          <span class="badge text-bg-success">Total</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="text-secondary small">Motoristas</div>
+            <div class="display-6 fw-bold">{{ total_motoristas }}</div>
+          </div>
+          <span class="badge text-bg-success">Total</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="text-secondary small">Oficinas</div>
+            <div class="display-6 fw-bold">{{ total_oficinas }}</div>
+          </div>
+          <span class="badge text-bg-success">Total</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="text-secondary small">Serviços</div>
+            <div class="display-6 fw-bold">{{ total_servicos }}</div>
+          </div>
+          <span class="badge text-bg-success">Total</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,172 @@
+[
+  {
+    "model": "oficina.veiculo",
+    "pk": 1,
+    "fields": {
+      "placa": "ABC1234",
+      "modelo": "Volkswagen Gol 1.0"
+    }
+  },
+  {
+    "model": "oficina.veiculo",
+    "pk": 2,
+    "fields": {
+      "placa": "DEF5678",
+      "modelo": "Fiat Uno Mille"
+    }
+  },
+  {
+    "model": "oficina.veiculo",
+    "pk": 3,
+    "fields": {
+      "placa": "GHI9012",
+      "modelo": "Honda Civic 2.0"
+    }
+  },
+  {
+    "model": "oficina.veiculo",
+    "pk": 4,
+    "fields": {
+      "placa": "JKL3456",
+      "modelo": "Toyota Corolla 1.8"
+    }
+  },
+  {
+    "model": "oficina.veiculo",
+    "pk": 5,
+    "fields": {
+      "placa": "MNO7890",
+      "modelo": "Chevrolet Onix 1.4"
+    }
+  },
+  {
+    "model": "oficina.motorista",
+    "pk": 1,
+    "fields": {
+      "nome": "João Silva Santos",
+      "cpf": "12345678901"
+    }
+  },
+  {
+    "model": "oficina.motorista",
+    "pk": 2,
+    "fields": {
+      "nome": "Maria Oliveira Costa",
+      "cpf": "23456789012"
+    }
+  },
+  {
+    "model": "oficina.motorista",
+    "pk": 3,
+    "fields": {
+      "nome": "Pedro Almeida Ferreira",
+      "cpf": "34567890123"
+    }
+  },
+  {
+    "model": "oficina.motorista",
+    "pk": 4,
+    "fields": {
+      "nome": "Ana Carolina Souza",
+      "cpf": "45678901234"
+    }
+  },
+  {
+    "model": "oficina.motorista",
+    "pk": 5,
+    "fields": {
+      "nome": "Carlos Eduardo Lima",
+      "cpf": "56789012345"
+    }
+  },
+  {
+    "model": "oficina.oficina",
+    "pk": 1,
+    "fields": {
+      "nome": "Auto Mecânica Silva"
+    }
+  },
+  {
+    "model": "oficina.oficina",
+    "pk": 2,
+    "fields": {
+      "nome": "Oficina do João"
+    }
+  },
+  {
+    "model": "oficina.oficina",
+    "pk": 3,
+    "fields": {
+      "nome": "Mecânica Rápida Ltda"
+    }
+  },
+  {
+    "model": "oficina.oficina",
+    "pk": 4,
+    "fields": {
+      "nome": "Centro Automotivo Norte"
+    }
+  },
+  {
+    "model": "oficina.oficina",
+    "pk": 5,
+    "fields": {
+      "nome": "Oficina Especializada RN"
+    }
+  },
+  {
+    "model": "oficina.servicomanutencao",
+    "pk": 1,
+    "fields": {
+      "veiculo": 1,
+      "oficina": 1,
+      "motorista": 1,
+      "data_servico": "2025-01-15",
+      "descricao": "Troca de óleo e filtro do motor. Verificação geral dos níveis de fluidos."
+    }
+  },
+  {
+    "model": "oficina.servicomanutencao",
+    "pk": 2,
+    "fields": {
+      "veiculo": 2,
+      "oficina": 2,
+      "motorista": 2,
+      "data_servico": "2025-02-10",
+      "descricao": "Alinhamento e balanceamento das rodas. Calibragem dos pneus."
+    }
+  },
+  {
+    "model": "oficina.servicomanutencao",
+    "pk": 3,
+    "fields": {
+      "veiculo": 3,
+      "oficina": 3,
+      "motorista": 3,
+      "data_servico": "2025-03-05",
+      "descricao": "Revisão completa dos freios. Troca das pastilhas dianteiras."
+    }
+  },
+  {
+    "model": "oficina.servicomanutencao",
+    "pk": 4,
+    "fields": {
+      "veiculo": 4,
+      "oficina": 4,
+      "motorista": 4,
+      "data_servico": "2025-04-20",
+      "descricao": "Troca da embreagem e revisão da caixa de câmbio."
+    }
+  },
+  {
+    "model": "oficina.servicomanutencao",
+    "pk": 5,
+    "fields": {
+      "veiculo": 5,
+      "oficina": 5,
+      "motorista": 5,
+      "data_servico": "2025-05-12",
+      "descricao": "Manutenção preventiva completa: óleo, filtros, velas e correia dentada."
+    }
+  }
+]

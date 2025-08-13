@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Detalhes do Motorista - Oficina{% endblock %}
+{% block nav_motoristas %}active{% endblock %}
+{% block content %}
+<h2 class="mb-3">Detalhes do Motorista</h2>
+<div class="card border-0 shadow-sm">
+  <div class="card-body">
+    <dl class="row mb-0">
+      <dt class="col-md-2">Nome</dt>
+      <dd class="col-md-10">{{ motorista.nome }}</dd>
+      <dt class="col-md-2">CPF</dt>
+      <dd class="col-md-10">{{ motorista.cpf }}</dd>
+    </dl>
+    <div class="mt-4 d-flex gap-2">
+      <a class="btn btn-outline-primary" href="{% url 'motorista_update' motorista.pk %}">Editar</a>
+      <a class="btn btn-outline-danger" href="{% url 'motorista_delete' motorista.pk %}">Remover</a>
+      <a class="btn btn-outline-secondary" href="{% url 'motorista_list' %}">Voltar</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

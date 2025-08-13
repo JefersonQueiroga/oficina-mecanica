@@ -1,0 +1,67 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Oficina - IFRN{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="{% static 'images/ifrn.jpg' %}" type="image/jpeg">
+    <link rel="shortcut icon" href="{% static 'images/ifrn.jpg' %}" type="image/jpeg">
+    <style>
+      :root { --ifrn-green: #1A8E43; --ifrn-green-dark: #0f6b30; }
+      body { min-height: 100vh; }
+      .app-header { background: var(--ifrn-green); color: #fff; }
+      .app-footer { background: var(--ifrn-green-dark); color: #fff; }
+      .sidebar { width: 240px; flex-shrink: 0; }
+      .sidebar .nav-link { color: #1f2937; }
+      .sidebar .nav-link.active { background: #e6f4ea; color: var(--ifrn-green-dark); font-weight: 600; }
+      .content { flex: 1; min-width: 0; }
+      @media (max-width: 991.98px) { .content { margin-left: 0; } .sidebar { position: static; width: 100%; } }
+    </style>
+    {% block extra_head %}{% endblock %}
+  </head>
+  <body class="bg-light">
+    <header class="app-header py-3 shadow-sm">
+      <div class="container-fluid d-flex align-items-center gap-3">
+        <img src="{% static 'images/ifrn.jpg' %}" alt="IFRN" height="48" style="background: white; padding: 4px; border-radius: 4px;">
+        <div>
+          <h1 class="h4 mb-0">Oficina Mecânica - IFRN</h1>
+          <small class="opacity-75">Sistema de controle de manutenção</small>
+        </div>
+      </div>
+    </header>
+
+    <div class="d-lg-flex">
+      <nav class="sidebar border-end bg-white p-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <span class="fw-semibold text-secondary">Menu</span>
+          <button class="btn btn-sm btn-outline-success d-lg-none" data-bs-toggle="collapse" data-bs-target="#menuLinks">Menu</button>
+        </div>
+        <div id="menuLinks" class="collapse d-lg-block">
+          <ul class="nav nav-pills flex-column gap-1">
+            <li class="nav-item"><a class="nav-link {% block nav_dashboard %}{% endblock %}" href="{% url 'index' %}">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link {% block nav_motoristas %}{% endblock %}" href="{% url 'motorista_list' %}">Motoristas</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Serviços (alunos)</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <main class="content">
+        <div class="container-fluid py-4">
+          {% block content %}{% endblock %}
+        </div>
+      </main>
+    </div>
+
+    <footer class="app-footer mt-auto py-3">
+      <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center">
+        <span>&copy; {% now 'Y' %} IFRN • Projeto Oficina Mecânica</span>
+        <span class="small">Desenvolvido para fins educacionais</span>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+  </body>
+</html>
