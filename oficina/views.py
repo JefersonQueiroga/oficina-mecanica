@@ -74,3 +74,4 @@ def motorista_delete_view(request, pk):
     nome_motorista = motorista.nome
     motorista.delete()
     return redirect('motorista_list')
+

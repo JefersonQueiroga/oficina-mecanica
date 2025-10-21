@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Detalhes do Serviço - Oficina{% endblock %}
+{% block nav_servicos %}active{% endblock %}
+
+{% block content %}
+<h2 class="mb-3">Detalhes do Serviço</h2>
+<div class="card border-0 shadow-sm">
+  <div class="card-body">
+    <dl class="row mb-0">
+      <dt class="col-md-2">Veículo</dt>
+      <dd class="col-md-10">{{ servico.veiculo }}</dd>
+
+      <dt class="col-md-2">Oficina</dt>
+      <dd class="col-md-10">{{ servico.oficina }}</dd>
+
+      <dt class="col-md-2">Motorista</dt>
+      <dd class="col-md-10">{{ servico.motorista|default:"—" }}</dd>
+
+      <dt class="col-md-2">Data</dt>
+      <dd class="col-md-10">{{ servico.data_servico }}</dd>
+
+      <dt class="col-md-2">Descrição</dt>
+      <dd class="col-md-10">{{ servico.descricao }}</dd>
+    </dl>
+
+    <div class="mt-4 d-flex gap-2">
+      <a class="btn btn-outline-primary" href="{% url 'servico_update' servico.pk %}">Editar</a>
+      <a class="btn btn-outline-danger" href="{% url 'servico_delete' servico.pk %}">Remover</a>
+      <a class="btn btn-outline-secondary" href="{% url 'servico_list' %}">Voltar</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

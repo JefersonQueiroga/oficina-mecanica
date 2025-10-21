@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}{% if view.object %}Editar Serviço{% else %}Novo Serviço{% endif %} - Oficina{% endblock %}
+{% block nav_servicos %}active{% endblock %}
+
+{% block content %}
+<h2 class="mb-3">{% if view.object %}Editar {% else %}Novo{% endif %} Serviço</h2>
+
+<div class="card border-0 shadow-sm">
+  <div class="card-body">
+    <form method="post">
+      {% csrf_token %}
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label" for="id_veiculo">Veículo</label>
+          {{ form.veiculo }}
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label" for="id_oficina">Oficina</label>
+          {{ form.oficina }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label" for="id_motorista">Motorista (opcional)</label>
+          {{ form.motorista }}
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label" for="id_data_servico">Data do Serviço</label>
+          {{ form.data_servico }}
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="id_descricao">Descrição</label>
+        {{ form.descricao }}
+      </div>
+
+      <div class="mt-4 d-flex gap-2">
+        <button class="btn btn-success" type="submit">Salvar</button>
+        <a class="btn btn-outline-secondary" href="{% url 'servico_list' %}">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
