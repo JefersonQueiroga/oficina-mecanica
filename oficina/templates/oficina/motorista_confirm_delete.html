@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Excluir Motorista - Oficina{% endblock %}
+{% block nav_motoristas %}active{% endblock %}
+
+{% block content %}
+<h2 class="mb-3 text-danger">Excluir Motorista</h2>
+<div class="card border-0 shadow-sm">
+  <div class="card-body">
+    <p class="mb-4">
+      Tem certeza que deseja excluir o motorista 
+      <strong>{{ object.nome }}</strong>?
+    </p>
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-danger">
+          Confirmar exclusão
+        </button>
+        <a href="{% url 'motorista_list' %}" class="btn btn-outline-secondary">
+          Cancelar
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
